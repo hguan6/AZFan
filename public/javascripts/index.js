@@ -32,21 +32,24 @@ mainApp.controller('CarouselCtrl', function ($scope) {
   $scope.noWrapSlides = false;
   $scope.active = 0;
   var currIndex = 0;
+  var food = FoodService.food;
+  var NumofFood = food.length;
+  
   var slides = $scope.slides = [
     {
-      image: 'images/img_chania.jpg',
+      image: 'images/SzechwanPalaceFood1.jpg',
       id: currIndex++
     },
     {
-      image: 'images/img_chania2.jpg',
+      image: 'images/SzechwanPalaceFood2.jpg',
       id: currIndex++
     },
     {
-      image: 'images/img_flower.jpg',
+      image: 'images/SzechwanPalaceFood3.jpg',
       id: currIndex++
     },
     {
-      image: 'images/img_flower2.jpg',
+      image: 'images/SzechwanPalaceFood4.jpg',
       id: currIndex++
     }
   ];   
@@ -62,8 +65,7 @@ mainApp.controller('TabsCtrl',function ($scope, $timeout, NgMap, FoodService){
   $scope.hoveringOver = function(value) {    
     $scope.overStar = value;
     $scope.percent = 100 * (value / $scope.max);
-  };
-  
+  };  
   
 //google map
    $scope.maps = {};  
