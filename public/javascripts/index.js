@@ -27,7 +27,7 @@ mainApp.factory('FoodService', function(){
   return foodService;
 });
 //Carousel Controller------------------------------------------------------------------------
-mainApp.controller('CarouselCtrl', function ($scope) {  
+mainApp.controller('CarouselCtrl', function ($scope, FoodService) {  
   $scope.myInterval = 5000;
   $scope.noWrapSlides = false;
   $scope.active = 0;
@@ -81,6 +81,7 @@ mainApp.controller('TabsCtrl',function ($scope, $timeout, NgMap, FoodService){
     var restaurant = restaurants[f.restaurantId];  
     $scope.address = restaurant.address;
     $scope.restaurantName = restaurant.name;
+    $scope.image = restaurant.imageLink;
     $timeout(function () {
                         angular.forEach($scope.maps, function (map) {
                                 google.maps.event.trigger(map, 'resize');
