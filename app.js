@@ -1,6 +1,10 @@
 var express = require('express');
 var path = require("path");
+var helmet = require('helmet');
+var compression = require('compression');
 var app = express();
+app.use(helmet());
+app.use(compression());
 var port = process.env.PORT || 3000;
 
 app.set('views', __dirname + '/views');
