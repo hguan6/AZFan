@@ -26,6 +26,33 @@ mainApp.factory('FoodService', function(){
   };
   return foodService;
 });
+//CollapseCtrl Sign in/Sign up/Sign out------------------------------------------------------
+mainApp.controller('CollapseCtrl', function($scope, $http) {
+  $scope.signInisCollapsed = true;
+  $scope.signUpisCollapsed = true;
+
+  $scope.openSignUp = function() {    
+    $scope.signUpisCollapsed = false; 
+    $scope.signInisCollapsed = true;
+  }
+   $scope.openSignIn = function() {    
+    $scope.signUpisCollapsed = true; 
+    $scope.signInisCollapsed = false;
+  }
+
+  $scope.signUp = function() {
+    var url = "/signup/username/" + $scope.signUpUsername + "/password/" + $scope.signUpPassword;
+    $http({
+      method: 'GET',
+      url: url
+    }).then(function successCallback(response) {
+      console.log(response.data);
+      $scope.signUpisCollapsed = true; 
+    }, function errorCallback(response) {
+      console.log(response.header + " " + response.status);
+    });
+  }
+});
 //Carousel Controller------------------------------------------------------------------------
 mainApp.controller('CarouselCtrl', function ($scope, FoodService) {  
   $scope.myInterval = 5000;
