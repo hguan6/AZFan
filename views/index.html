@@ -17,28 +17,37 @@
 <body>
 <h1 id="header">AZ Fan</h1>
   <div ng-controller="CollapseCtrl">
-   <a href="#" id="signIn" ng-click="openSignIn()">Sign In</a>
-   <a href="#" id="signUp" ng-click="openSignUp()">Sign Up</a> 
+  <div ng-show="!isSignIn">
+    <a href="#" class="signInOut" ng-click="openSignIn()">Sign In</a>
+    <a href="#" class="signInOut" ng-click="openSignUp()">Sign Up</a> 
+  </div>
+  <div ng-show="isSignIn">
+    <label class="signInOut">{{nameLabel}}</label>
+    <a href="#" class="signInOut" ng-click="signOut()">Sign out</a> 
+  </div>
     <div uib-collapse="signUpisCollapsed">
     <div class="well well-lg userpassword">
     <h3>Welcome to AZ Fan, please sign up to access comments and ratings!</h3>
       <input type="text" class="form-control" placeholder="Enter your online id" ng-model="signUpUsername"><br>
-      <input type="password" class="form-control" placeholder="Enter your password" ng-model="signUpPassword"><br>
-      <button type="button" class="btn btn-info" ng-click="signUp()">Sign Up</button> 
-      <button type="button" class="btn btn-info" ng-click="signUpisCollapsed = true">Cancel</button>      
+      <p ng-show = "isExist" style="color:red;"><small>User already exist! Please use another username or login with your existing user</small></p>
+      <input type="password" class="form-control" placeholder="Enter your password" ng-model="signUpPassword"><br>      
+      <button type="button" class="btn btn-info" ng-click="signUp()" >Sign Up</button> 
+      <button type="button" class="btn btn-info" ng-click="signUpisCollapsed = true; signUpUsername = null; signUpPassword = null; isExist = false;">Cancel</button>      
     </div>
-    </div>
-       <div uib-collapse="signInisCollapsed">
+    </div>    
+    <div uib-collapse="signInisCollapsed">
     <div class="well well-lg userpassword">
     <h3>Sign in to AZ Fan. Enjoy your trip to Arizona!</h3>
-      <input type="text" class="form-control" placeholder="Enter your online id" ng-model="SignInUsername"><br>
-      <input type="password" class="form-control" placeholder="Enter your password" ng-model="SignInPassword"><br>
+      <input type="text" class="form-control" placeholder="Enter your online id" ng-model="signInUsername"><br>
+      <p ng-show = "isEmpty" style="color:red;"><small>User doesn't exist!</small></p>
+      <input type="password" class="form-control" placeholder="Enter your password" ng-model="signInPassword"><br>
+      <p ng-show = "isWrongPw" style="color:red;"><small>Incorrect password!</small></p>
       <button type="button" class="btn btn-info" ng-click="signIn()">Sign In</button> 
-      <button type="button" class="btn btn-info" ng-click="signInisCollapsed = true">Cancel</button> 
+      <button type="button" class="btn btn-info" ng-click="signInisCollapsed = true; signInUsername = null; signInPassword = null">Cancel</button> 
     </div>
     </div>
-
   </div>
+
   <div ng-controller="CarouselCtrl" id="Carousel">
     <div style="height: 305px">
       <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
