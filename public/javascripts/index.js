@@ -26,6 +26,79 @@ mainApp.factory('FoodService', function(){
   };
   return foodService;
 });
+//CollapseCtrl Sign in/Sign up/Sign out------------------------------------------------------
+mainApp.controller('CollapseCtrl', function($scope, $http) {
+  $scope.signInisCollapsed = true;
+  $scope.signUpisCollapsed = true;
+  $scope.isSignIn = false;
+  $scope.isExist = false;
+  $scope.isEmpty = false;
+  $scope.isWrongPw = false;
+
+  $scope.openSignUp = function() {    
+    $scope.signUpisCollapsed = false; 
+    $scope.signInisCollapsed = true;
+  }
+   $scope.openSignIn = function() {    
+    $scope.signUpisCollapsed = true; 
+    $scope.signInisCollapsed = false;
+  }
+
+  $scope.signUp = function() {    
+    $http({
+      method: 'POST',
+      url: '/signup',
+      header: {'Content-Type' : 'application/json'},
+      data: {
+              username: $scope.signUpUsername,
+              password: $scope.signUpPassword
+            }
+    }).then(function successCallback(response) {
+      console.log(response.data);
+      $scope.signUpisCollapsed = true;     
+      $scope.isSignIn = true;
+      $scope.nameLabel = $scope.signUpUsername;
+    }, function errorCallback(response) {
+      console.log("Response status: " + response.status);
+       $scope.isExist = true;
+    });
+  }
+
+  $scope.signIn = function(){
+    $http({
+      method: 'POST',
+      url: '/signin',
+      header: {'Content-Type' : 'application/json'},
+      data: {
+              username: $scope.signInUsername,
+              password: $scope.signInPassword
+            }
+    }).then(function successCallback(response) {
+      console.log(response.data);
+      if(response.status == 203){
+        $scope.isWrongPw = true;        
+      } else{
+        $scope.signInisCollapsed = true; 
+        $scope.isEmpty = false;
+        $scope.isSignIn = true;
+        $scope.nameLabel = $scope.signInUsername;
+      }        
+    }, function errorCallback(response) {
+      console.log("Response status: " + response.status);
+      $scope.isEmpty = true;
+    });
+  }
+
+  $scope.signOut = function() {
+    $http({
+      method: 'POST',
+      url: '/signout',
+      header: {'Content-Type' : 'application/json'}
+    }).then(function (response) {
+      $scope.isSignIn = false;
+    });
+  } 
+});
 //Carousel Controller------------------------------------------------------------------------
 mainApp.controller('CarouselCtrl', function ($scope, FoodService) {  
   $scope.myInterval = 5000;
