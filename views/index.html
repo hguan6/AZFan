@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <script src="https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places"></script>
   <script src="javascripts/angular.js"></script>
   <script src="javascripts/angular-animate.js"></script>
@@ -16,13 +15,40 @@
 </head>
 
 <body>
+<h1 id="header">AZ Fan</h1>
+  <div ng-controller="CollapseCtrl">
+  <div ng-show="!isSignIn">
+    <a href="#" class="signInOut" ng-click="openSignIn()">Sign In</a>
+    <a href="#" class="signInOut" ng-click="openSignUp()">Sign Up</a> 
+  </div>
+  <div ng-show="isSignIn">
+    <label class="signInOut">{{nameLabel}}</label>
+    <a href="#" class="signInOut" ng-click="signOut()">Sign out</a> 
+  </div>
+    <div uib-collapse="signUpisCollapsed">
+    <div class="well well-lg userpassword">
+    <h3>Welcome to AZ Fan, please sign up to access comments and ratings!</h3>
+      <input type="text" class="form-control" placeholder="Enter your online id" ng-model="signUpUsername"><br>
+      <p ng-show = "isExist" style="color:red;"><small>User already exist! Please use another username or login with your existing user</small></p>
+      <input type="password" class="form-control" placeholder="Enter your password" ng-model="signUpPassword"><br>      
+      <button type="button" class="btn btn-info" ng-click="signUp()" >Sign Up</button> 
+      <button type="button" class="btn btn-info" ng-click="signUpisCollapsed = true; signUpUsername = null; signUpPassword = null; isExist = false;">Cancel</button>      
+    </div>
+    </div>    
+    <div uib-collapse="signInisCollapsed">
+    <div class="well well-lg userpassword">
+    <h3>Sign in to AZ Fan. Enjoy your trip to Arizona!</h3>
+      <input type="text" class="form-control" placeholder="Enter your online id" ng-model="signInUsername"><br>
+      <p ng-show = "isEmpty" style="color:red;"><small>User doesn't exist!</small></p>
+      <input type="password" class="form-control" placeholder="Enter your password" ng-model="signInPassword"><br>
+      <p ng-show = "isWrongPw" style="color:red;"><small>Incorrect password!</small></p>
+      <button type="button" class="btn btn-info" ng-click="signIn()">Sign In</button> 
+      <button type="button" class="btn btn-info" ng-click="signInisCollapsed = true; signInUsername = null; signInPassword = null">Cancel</button> 
+    </div>
+    </div>
+  </div>
 
-
-<h1 class="header">AZ Fan</h1>
-
-
-
-  <div ng-controller="CarouselCtrl">
+  <div ng-controller="CarouselCtrl" id="Carousel">
     <div style="height: 305px">
       <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
         <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
