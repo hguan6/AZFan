@@ -13,38 +13,39 @@ mainApp.factory('FoodService', function(){
       {id:"7", imageLink:"images/AnayasFresh.jpg", alt:"AnayasFresh.jpg",name:"Anaya's Fresh Mexican Restaurant",address:"5830 W Thunderbird Rd, Glendale, AZ 85306", phone:"(602)559-4377", website:"http://anayasfreshmexicanrestaurant.com", style:"Mexican style"}
     ],
     food: [
-      {imageLink:"images/SzechwanPalaceFood1.jpg", restaurantId:"0", alt="SzechwanPalaceFood1.jpg"},
-      {imageLink:"images/SzechwanPalaceFood2.jpg", restaurantId:"0", alt="SzechwanPalaceFood2.jpg"},
-      {imageLink:"images/SzechwanPalaceFood3.jpg", restaurantId:"0", alt="SzechwanPalaceFood3.jpg"},
-      {imageLink:"images/SzechwanPalaceFood4.jpg", restaurantId:"0", alt="SzechwanPalaceFood4.jpg"},
-      {imageLink:"images/PacificSeaFoodBuffetFood1.jpg", restaurantId:"1", alt="PacificSeaFoodBuffetFood1.jpg"},
-      {imageLink:"images/PacificSeaFoodBuffetFood2.jpg", restaurantId:"1", alt="PacificSeaFoodBuffetFood2.jpg"},
-      {imageLink:"images/PacificSeaFoodBuffetFood3.jpg", restaurantId:"1", alt="PacificSeaFoodBuffetFood3.jpg"},
-      {imageLink:"images/PacificSeaFoodBuffetFood4.jpg", restaurantId:"1", alt="PacificSeaFoodBuffetFood4.jpg"},
-      {imageLink:"images/ThaiBasilFood1.jpg", restaurantId:"2", alt="ThaiBasilFood1.jpg"},
-      {imageLink:"images/ThaiBasilFood2.jpg", restaurantId:"2", alt="ThaiBasilFood2.jpg"},
-      {imageLink:"images/ThaiBasilFood3.jpg", restaurantId:"2", alt="ThaiBasilFood3.jpg"},
-      {imageLink:"images/ThaiBasilFood4.jpg", restaurantId:"2", alt="ThaiBasilFood4.jpg"},
-      {imageLink:"images/PhoenixPalaceFood1.jpg", restaurantId:"3", alt="PhoenixPalaceFood1.jpg"},
-      {imageLink:"images/PhoenixPalaceFood2.jpg", restaurantId:"3", alt="PhoenixPalaceFood2.jpg"},
-      {imageLink:"images/PhoenixPalaceFood3.jpg", restaurantId:"3", alt="PhoenixPalaceFood3.jpg"},
-      {imageLink:"images/PhoenixPalaceFood4.jpg", restaurantId:"3", alt="PhoenixPalaceFood4.jpg"},
-      {imageLink:"images/ChengduDelightChineseCuisineFood1.jpg", restaurantId:"4", alt="ChengduDelightChineseCuisineFood1.jpg"},
-      {imageLink:"images/ChengduDelightChineseCuisineFood2.jpg", restaurantId:"4", alt="ChengduDelightChineseCuisineFood2.jpg"},
-      {imageLink:"images/ChengduDelightChineseCuisineFood3.jpg", restaurantId:"4", alt="ChengduDelightChineseCuisineFood3.jpg"},
-      {imageLink:"images/ChengduDelightChineseCuisineFood4.jpeg", restaurantId:"4", alt="ChengduDelightChineseCuisineFood4.jpeg"},
-      {imageLink:"images/TaqueriaMiCasitaFood1.jpg", restaurantId:"5", alt="TaqueriaMiCasitaFood1.jpg"},
-      {imageLink:"images/TaqueriaMiCasitaFood2.jpg", restaurantId:"5", alt="TaqueriaMiCasitaFood2.jpg"},
-      {imageLink:"images/TaqueriaMiCasitaFood3.jpg", restaurantId:"5", alt="TaqueriaMiCasitaFood3.jpg"},
-      {imageLink:"images/TaqueriaMiCasitaFood4.jpg", restaurantId:"5", alt="TaqueriaMiCasitaFood4.jpg"},
-      {imageLink:"images/PoposFiestaDelSolFood1.jpg", restaurantId:"6", alt="PoposFiestaDelSolFood1.jpg"},
-      {imageLink:"images/PoposFiestaDelSolFood2.jpg", restaurantId:"6", alt="PoposFiestaDelSolFood2.jpg"},
-      {imageLink:"images/PoposFiestaDelSolFood3.jpg", restaurantId:"6", alt="PoposFiestaDelSolFood3.jpg"},
-      {imageLink:"images/PoposFiestaDelSolFood4.jpg", restaurantId:"6", alt="PoposFiestaDelSolFood4.jpg"},
-      {imageLink:"images/AnayasFreshFood1.jpg", restaurantId:"7", alt="AnayasFreshFood1.jpg"},
-      {imageLink:"images/AnayasFreshFood2.jpg", restaurantId:"7", alt="AnayasFreshFood2.jpg"},
-      {imageLink:"images/AnayasFreshFood3.jpg", restaurantId:"7", alt="AnayasFreshFood3.jpg"},
-      {imageLink:"images/AnayasFreshFood4.jpg", restaurantId:"7", alt="AnayasFreshFood4.jpg"}
+      {imageLink:"images/SzechwanPalaceFood1.jpg", restaurantId:"0", alt:"SzechwanPalaceFood1.jpg"},
+      {imageLink:"images/SzechwanPalaceFood2.jpg", restaurantId:"0", alt:"SzechwanPalaceFood2.jpg"},
+      {imageLink:"images/SzechwanPalaceFood3.jpg", restaurantId:"0", alt:"SzechwanPalaceFood3.jpg"},
+      {imageLink:"images/SzechwanPalaceFood4.jpg", restaurantId:"0", alt:"SzechwanPalaceFood4.jpg"},
+      {imageLink:"images/PacificSeaFoodBuffetFood1.jpg", restaurantId:"1", alt:"PacificSeaFoodBuffetFood1.jpg"},
+      {imageLink:"images/PacificSeaFoodBuffetFood2.jpg", restaurantId:"1", alt:"PacificSeaFoodBuffetFood2.jpg"},
+      {imageLink:"images/PacificSeaFoodBuffetFood3.jpg", restaurantId:"1", alt:"PacificSeaFoodBuffetFood3.jpg"},
+      {imageLink:"images/PacificSeaFoodBuffetFood4.jpg", restaurantId:"1", alt:"PacificSeaFoodBuffetFood4.jpg"},
+      {imageLink:"images/ThaiBasilFood1.jpg", restaurantId:"2", alt:"ThaiBasilFood1.jpg"},
+      {imageLink:"images/ThaiBasilFood2.jpg", restaurantId:"2", alt:"ThaiBasilFood2.jpg"},
+      {imageLink:"images/ThaiBasilFood3.jpg", restaurantId:"2", alt:"ThaiBasilFood3.jpg"},
+      {imageLink:"images/ThaiBasilFood4.jpg", restaurantId:"2", alt:"ThaiBasilFood4.jpg"},
+      {imageLink:"images/PhoenixPalaceFood1.jpg", restaurantId:"3", alt:"PhoenixPalaceFood1.jpg"},
+      {imageLink:"images/PhoenixPalaceFood2.jpg", restaurantId:"3", alt:"PhoenixPalaceFood2.jpg"},
+      {imageLink:"images/PhoenixPalaceFood3.jpg", restaurantId:"3", alt:"PhoenixPalaceFood3.jpg"},
+      {imageLink:"images/PhoenixPalaceFood4.jpg", restaurantId:"3", alt:"PhoenixPalaceFood4.jpg"},
+      {imageLink:"images/ChengduDelightChineseCuisineFood1.jpg", restaurantId:"4", alt:"ChengduDelightChineseCuisineFood1.jpg"},
+      {imageLink:"images/ChengduDelightChineseCuisineFood2.jpg", restaurantId:"4", alt:"ChengduDelightChineseCuisineFood2.jpg"},
+      {imageLink:"images/ChengduDelightChineseCuisineFood3.jpg", restaurantId:"4", alt:"ChengduDelightChineseCuisineFood3.jpg"},
+      {imageLink:"images/ChengduDelightChineseCuisineFood4.jpeg", restaurantId:"4", alt:"ChengduDelightChineseCuisineFood4.jpeg"},
+      {imageLink:"images/TaqueriaMiCasitaFood1.jpg", restaurantId:"5", alt:"TaqueriaMiCasitaFood1.jpg"},
+      {imageLink:"images/TaqueriaMiCasitaFood2.jpg", restaurantId:"5", alt:"TaqueriaMiCasitaFood2.jpg"},
+      {imageLink:"images/TaqueriaMiCasitaFood3.jpg", restaurantId:"5", alt:"TaqueriaMiCasitaFood3.jpg"},
+      {imageLink:"images/TaqueriaMiCasitaFood4.jpg", restaurantId:"5", alt:"TaqueriaMiCasitaFood4.jpg"},
+      {imageLink:"images/PoposFiestaDelSolFood1.jpg", restaurantId:"6", alt:"PoposFiestaDelSolFood1.jpg"},
+      {imageLink:"images/PoposFiestaDelSolFood2.jpg", restaurantId:"6", alt:"PoposFiestaDelSolFood2.jpg"},
+      {imageLink:"images/PoposFiestaDelSolFood3.jpg", restaurantId:"6", alt:"PoposFiestaDelSolFood3.jpg"},
+      {imageLink:"images/PoposFiestaDelSolFood4.jpg", restaurantId:"6", alt:"PoposFiestaDelSolFood4.jpg"},
+      {imageLink:"images/AnayasFreshFood1.jpg", restaurantId:"7", alt:"AnayasFreshFood1.jpg"},
+      {imageLink:"images/AnayasFreshFood2.jpg", restaurantId:"7", alt:"AnayasFreshFood2.jpg"},
+      {imageLink:"images/AnayasFreshFood3.jpg", restaurantId:"7", alt:"AnayasFreshFood3.jpg"},
+      {imageLink:"images/AnayasFreshFood4.jpg", restaurantId:"7", alt:"AnayasFreshFood4.jpg"}
+      
     ]
   };
   return foodService;
@@ -178,7 +179,6 @@ mainApp.controller('TabsCtrl',function ($scope, $timeout, NgMap, FoodService){
     $scope.address = restaurant.address;
     $scope.restaurantName = restaurant.name;
     $scope.image = restaurant.imageLink;
-    $scope.alt = restaurant.alt;
     $timeout(function () {
                         angular.forEach($scope.maps, function (map) {
                                 google.maps.event.trigger(map, 'resize');
