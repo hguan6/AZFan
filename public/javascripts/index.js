@@ -154,14 +154,17 @@ mainApp.controller('CarouselCtrl', function ($scope, FoodService) {
 mainApp.controller('TabsCtrl',function ($scope, $timeout, NgMap, FoodService){
   $scope.food = FoodService.food;
   var restaurants = FoodService.restaurants;
+  //rating
   $scope.rate = 7;
   $scope.max = 10;
   $scope.isReadonly = false;
-  //rating
-  $scope.hoveringOver = function(value) {    
-    $scope.overStar = value;
+  this.overStar = false;
+
+  $scope.hoveringOver = function(value) {
+    this.overStar = value;
     $scope.percent = 100 * (value / $scope.max);
-  };  
+  };
+
   
 //google map
    $scope.maps = {};  
